@@ -1,1 +1,121 @@
-rer
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Site de réservation de repas en ligne">
+  <meta name="keywords" content="Réservation, repas, restaurant, Paris">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- permet de récupérer la largeur de l'écran de l'utilisateur -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <title>Oh My Food !</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1><img class="header__heading" src="img/logo.png" alt="logo de Ohmyfood"></h1>
+  </header>
+
+  <section class="location">
+    <i class="location__icone fas fa-map-marker-alt"></i>
+    <form method="post" action="action.php">
+      <input class="location__input" type="text" name="ville" placeholder="Paris, Belleville">
+    </form>
+  </section>
+
+  <section class="presentation">
+    <h2 class="presentation__title">Réservez le menu qui vous convient</h2>
+    <p class="presentation__text">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+    <a class="presentation__btn" href=".restaurant-grid">Exoplorer nos restaurants</a>
+  </section>
+
+  <section class="fonctionnement">
+    <h2 class="fonctionnement__title">Fonctionnement</h2>
+
+    <div class="etape">
+      <p class="etape__numero">1</p>
+      <i class="etape__icone fas fa-mobile-alt"></i>
+      <p class="etape__text">Choisissez un restaurant</p>
+    </div>
+
+    <div class="etape">
+      <p class="etape__numero">2</p>
+      <i class="etape__icone fas fa-list-ul"></i>
+      <p class="etape__text">Composez votre menu</p>
+    </div>
+
+    <div class="etape">
+      <p class="etape__numero">3</p>
+      <i class="etape__icone fas fa-store"></i>
+      <p class="etape__text">Dégustez au restaurant</p>
+    </div>
+  </section>
+
+  <section class="restaurant-grid">
+    <h2 class="restaurant-grid__title">Restaurants</h2>
+
+    <a class="restaurant-link" href="lapalettedugout.html">
+      <p class="restaurant-link__nouveau">Nouveau</p>
+      <figure class="figure">
+        <img class="figure__image" src="img/palettedugout.jpg" alt="photo d'une assiette de La palette du goût">
+        <figcaption class="figure__caption">
+          <h3>La palette du goût</h3>
+          <p>Ménilmontant</p>
+          <i class="fas fa-heart"></i>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="restaurant-link" href="lanoteenchantee.html">
+      <p class="restaurant-link__nouveau">Nouveau</p>
+      <figure class="figure">
+        <img class="figure__image" src="img/noteenchantee.jpg" alt="photo d'une assiette de La note enchantee">
+        <figcaption class="figure__caption">
+          <h3>La note enchantée</h3>
+          <p>Charonne</p>
+          <i class="fas fa-heart"></i>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="restaurant-link" href="alafrancaise.html">
+      <figure class="figure">
+        <img class="figure__image" src="img/alafrancaise.jpg" alt="photo d'une assiette de A la française">
+        <figcaption class="figure__caption">
+          <h3>A la française</h3>
+          <p>Cité Rouge</p>
+          <i class="fas fa-heart"></i>
+        </figcaption>
+      </figure>
+    </a>
+
+    <a class="restaurant-link" href="ledelicedessens.html">
+      <figure class="figure">
+        <img class="figure__image" src="img/delicedessens.jpg" alt="photo d'une assiette de Le délice des sens">
+        <figcaption class="figure__caption">
+          <h3>Le délice des sens</h3>
+          <p>Folie-Méricourt</p>
+          <i class="fas fa-heart"></i>
+        </figcaption>
+      </figure>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <img class="footer__logo" src="img/logo.png">
+
+    <a class="footer__link" href="proposerrestaurant.html">
+      <i class="fas fa-utensils"></i>
+      <p>Proposer un resaurant</p>
+    </a>
+
+    <a class="footer__link" href="devenirpartenaire.html">
+      <i class="fas fa-hands-helping"></i>
+      <p>Devenir partenaire</p>
+    </a>
+
+    <a class="footer__link" href="mentionslegales.html">Mentions légales</a>
+
+    <a class="footer__link" href="contact.html">Contact</a>
+  </footer>
+</body>
