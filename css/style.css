@@ -1,0 +1,23 @@
+body {
+  margin: unset;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.header__heading {
+  height: 30px;
+}
+.header h1 {
+  margin-bottom: 5px;
+}
+.header__back {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

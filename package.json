@@ -1,0 +1,19 @@
+{
+  "name": "antoinejeandin_3_04112020",
+  "version": "1.0.0",
+  "description": "projet 3 antoine jeandin",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garten9/AntoineJeandin_3_04112020.git"
+  },
+  "author": "antoine jeandin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Garten9/AntoineJeandin_3_04112020/issues"
+  },
+  "homepage": "https://github.com/Garten9/AntoineJeandin_3_04112020#readme"
+}
