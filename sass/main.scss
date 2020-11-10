@@ -3,25 +3,62 @@ $clr-2:#FF79DA;
 $clr-3:#99E2D0;
 $clr-white:white;
 
+// @mixin position($type,){
+//   position :relative;
+//   top :$dist;
+// }
+
+@mixin position($type, $top:auto, $left:auto, $bottom:auto, $right:auto){
+  position:$type;
+  top:$top;
+  left:$left;
+  bottom:$bottom;
+  right:$right;
+}
+
 body {
   margin: unset;
 }
+
 .header{
   display: flex;
   justify-content: center;
   align-content: center;
+
   &__heading {
     height: 30px;
   }
 
-  h1 {
-    margin-bottom: 5px;
-  }
 
   &__back {
-    position: absolute;
-    top : 25px;
-    left: 25px;
+    @include position(absolute,25px,25px);
     font-size: 20px;
+  }
+}
+
+.menu-grid{
+  background-color: darken($clr-white,4%);
+  border-radius: 50px;
+  @include position(relative,-90px);
+
+  &__title{
+    @include position(relative,30px,20px);
+  }
+}
+
+.menu-img {
+  width: 100%;
+  @include position(relative,-15px);
+}
+
+.figure {
+  &__image{
+    width: 100%;
+  }
+}
+
+.footer {
+  &__logo{
+    width: 100%;
   }
 }

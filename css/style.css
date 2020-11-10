@@ -10,14 +10,47 @@ body {
 .header__heading {
   height: 30px;
 }
-.header h1 {
-  margin-bottom: 5px;
-}
 .header__back {
   position: absolute;
   top: 25px;
   left: 25px;
+  bottom: auto;
+  right: auto;
   font-size: 20px;
+}
+
+.menu-grid {
+  background-color: whitesmoke;
+  border-radius: 50px;
+  position: relative;
+  top: -90px;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+.menu-grid__title {
+  position: relative;
+  top: 30px;
+  left: 20px;
+  bottom: auto;
+  right: auto;
+}
+
+.menu-img {
+  width: 100%;
+  position: relative;
+  top: -15px;
+  left: auto;
+  bottom: auto;
+  right: auto;
+}
+
+.figure__image {
+  width: 100%;
+}
+
+.footer__logo {
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */
