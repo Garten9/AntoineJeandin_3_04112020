@@ -63,16 +63,105 @@ body {
   justify-content: center;
   align-content: center;
 
+
   &__heading {
-    height: 30px;
+    // height: 30px;
+    font-family: map-get($font, font-titre), Arial, serif;
+    margin-top: 10px;
+    margin-bottom: 6px;
+
   }
 
 
   &__back {
     @include position(absolute,25px,25px);
     font-size: 20px;
+    color: black;
   }
 }
+
+.location{
+  display: flex;
+  background-color: darken($clr-white,8%);
+  justify-content: center;
+  align-items: center;
+  height :50px;
+  box-shadow: inset 0px 5px 2px darken($clr-white,14%) ;
+
+  form{
+    width:40%;
+  }
+
+  &__input{
+    color: black;
+    background-color: darken($clr-white,8%);
+    border:none;
+    margin-left: 10px;
+  }
+}
+
+
+.presentation{
+  background-color: darken($clr-white,4%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+
+  &__title{
+    margin-top: unset;
+    width:70%;
+
+  }
+
+  &__text{
+    margin-bottom: 25px;
+    width:80%;
+  }
+
+  &__btn{
+    width:65%;
+  }
+}
+
+.fonctionnement{
+  display: flex;
+  flex-direction: column;
+
+  .etape{
+    display: flex;
+    align-items: center;
+    background-color: darken($clr-white,4%);
+    box-shadow: 5px 5px 5px darken($clr-white,10%);
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 20px;
+
+    &__numero{
+      background-color: $clr-1;
+      color: $clr-white;
+      width: 22px;
+      text-align: center;
+      border-radius: 50%;
+      @include position(relative,auto,-10px);
+    }
+
+    &__icone{
+      color: darken($clr-white,50%);
+      margin-left: 10px;
+    }
+  }
+}
+
+
+
+
+
+
+
 
 .menu-grid{
   background-color: darken($clr-white,4%);
@@ -147,7 +236,7 @@ body {
 
 .menu-img {
   width: 100%;
-  @include position(relative,-15px);
+  // @include position(relative,-15px);
 }
 
 .figure {
@@ -167,20 +256,28 @@ body {
   flex-direction: column;
 
   &__logo{
-    width: 120px;
-    filter: invert(100%);
-    margin-bottom: 30px;
+    // width: 120px;
+    // filter: invert(100%);
+    // margin-bottom: 30px;
+    font-family: map-get($font, font-titre), Arial, serif;
+    margin-top: -10px;
+
   }
 
   &__link{
     text-decoration: none;
     color: $clr-white;
     display: flex;
+    align-items: center;
     margin-bottom: 5px;
 
     p{
       margin:unset;
       padding-left: 10px;
+    }
+
+    i{
+      width: 20px;
     }
   }
 }

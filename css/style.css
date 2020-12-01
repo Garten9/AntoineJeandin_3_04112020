@@ -35,7 +35,9 @@ body {
   align-content: center;
 }
 .header__heading {
-  height: 30px;
+  font-family: Shrikhand, Arial, serif;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
 .header__back {
   position: absolute;
@@ -44,6 +46,77 @@ body {
   bottom: auto;
   right: auto;
   font-size: 20px;
+  color: black;
+}
+
+.location {
+  display: flex;
+  background-color: #ebebeb;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-shadow: inset 0px 5px 2px #dbdbdb;
+}
+.location form {
+  width: 40%;
+}
+.location__input {
+  color: black;
+  background-color: #ebebeb;
+  border: none;
+  margin-left: 10px;
+}
+
+.presentation {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+.presentation__title {
+  margin-top: unset;
+  width: 70%;
+}
+.presentation__text {
+  margin-bottom: 25px;
+  width: 80%;
+}
+.presentation__btn {
+  width: 65%;
+}
+
+.fonctionnement {
+  display: flex;
+  flex-direction: column;
+}
+.fonctionnement .etape {
+  display: flex;
+  align-items: center;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+.fonctionnement .etape__numero {
+  background-color: #9356DC;
+  color: white;
+  width: 22px;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  top: auto;
+  left: -10px;
+  bottom: auto;
+  right: auto;
+}
+.fonctionnement .etape__icone {
+  color: gray;
+  margin-left: 10px;
 }
 
 .menu-grid {
@@ -128,11 +201,6 @@ body {
 
 .menu-img {
   width: 100%;
-  position: relative;
-  top: -15px;
-  left: auto;
-  bottom: auto;
-  right: auto;
 }
 
 .figure__image {
@@ -150,19 +218,22 @@ body {
   flex-direction: column;
 }
 .footer__logo {
-  width: 120px;
-  filter: invert(100%);
-  margin-bottom: 30px;
+  font-family: Shrikhand, Arial, serif;
+  margin-top: -10px;
 }
 .footer__link {
   text-decoration: none;
   color: white;
   display: flex;
+  align-items: center;
   margin-bottom: 5px;
 }
 .footer__link p {
   margin: unset;
   padding-left: 10px;
+}
+.footer__link i {
+  width: 20px;
 }
 
 /*# sourceMappingURL=style.css.map */
