@@ -26,6 +26,10 @@ $clr-2:#FF79DA;
 $clr-3:#99E2D0;
 $clr-white:white;
 
+$margin-title:20px;
+
+$border-radius: 15px;
+
 // @mixin position($type,){
 //   position :relative;
 //   top :$dist;
@@ -56,6 +60,11 @@ body {
   text-decoration: none;
   color: white;
   box-shadow: 5px 5px 5px darken($clr-white,10%);
+
+  &:hover{
+    background: linear-gradient(lighten($clr-2,10%),lighten($clr-1,10%));
+    box-shadow: 5px 5px 5px darken($clr-white,15%);
+  }
 }
 
 .header{
@@ -129,6 +138,12 @@ body {
 .fonctionnement{
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  &__title{
+    margin-left: $margin-title;
+  }
 
   .etape{
     display: flex;
@@ -138,7 +153,7 @@ body {
     width: 90%;
     margin: auto;
     margin-bottom: 20px;
-    border-radius: 20px;
+    border-radius: $border-radius;
 
     &__numero{
       background-color: $clr-1;
@@ -152,9 +167,82 @@ body {
     &__icone{
       color: darken($clr-white,50%);
       margin-left: 10px;
+      width: 19px;
+      margin-right: 20px;
+    }
+
+    &__text{
+      font-weight: 600;
     }
   }
 }
+
+.restaurant-grid{
+  background-color: darken($clr-white,4%);
+  padding-top: 20px;
+  padding-bottom: 140px;
+
+  &__title{
+    margin-left: $margin-title;
+  }
+}
+
+.restaurant-link{
+  background-color: $clr-white;
+
+  width:90%;
+  margin: auto;
+  display: block;
+  box-shadow: 5px 5px 5px darken($clr-white,10%);
+  text-decoration: none;
+  color: black;
+  position: relative;
+  border-radius: $border-radius;
+  margin-bottom: 15px;
+
+  &__nouveau{
+    margin: unset;
+    @include position(absolute, 15px, auto, auto,15px);
+    color: darken($clr-3,40%);
+    background-color: $clr-3;
+    padding: 3px 10px;
+    border-radius: 2px;
+  }
+}
+
+.figure{
+  margin: unset;
+
+
+  &__image{
+    border-top-right-radius: $border-radius;
+    border-top-left-radius: $border-radius;
+  }
+
+  &__caption{
+    padding-left: 15px;
+    padding-bottom: 15px;
+    position: relative;
+
+
+    h3{
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }
+
+    p{
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+
+    i{
+      @include position(absolute,10px,auto,auto,20px);
+      font-size: 20px;
+    }
+  }
+
+}
+
 
 
 

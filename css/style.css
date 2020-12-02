@@ -28,6 +28,10 @@ body {
   color: white;
   box-shadow: 5px 5px 5px #e6e6e6;
 }
+.btn:hover {
+  background: linear-gradient(#fface8, #ae80e5);
+  box-shadow: 5px 5px 5px #d9d9d9;
+}
 
 .header {
   display: flex;
@@ -91,6 +95,11 @@ body {
 .fonctionnement {
   display: flex;
   flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.fonctionnement__title {
+  margin-left: 20px;
 }
 .fonctionnement .etape {
   display: flex;
@@ -100,7 +109,7 @@ body {
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 .fonctionnement .etape__numero {
   background-color: #9356DC;
@@ -117,6 +126,74 @@ body {
 .fonctionnement .etape__icone {
   color: gray;
   margin-left: 10px;
+  width: 19px;
+  margin-right: 20px;
+}
+.fonctionnement .etape__text {
+  font-weight: 600;
+}
+
+.restaurant-grid {
+  background-color: whitesmoke;
+  padding-top: 20px;
+  padding-bottom: 140px;
+}
+.restaurant-grid__title {
+  margin-left: 20px;
+}
+
+.restaurant-link {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  display: block;
+  box-shadow: 5px 5px 5px #e6e6e6;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+.restaurant-link__nouveau {
+  margin: unset;
+  position: absolute;
+  top: 15px;
+  left: auto;
+  bottom: auto;
+  right: 15px;
+  color: #278870;
+  background-color: #99E2D0;
+  padding: 3px 10px;
+  border-radius: 2px;
+}
+
+.figure {
+  margin: unset;
+}
+.figure__image {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+.figure__caption {
+  padding-left: 15px;
+  padding-bottom: 15px;
+  position: relative;
+}
+.figure__caption h3 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.figure__caption p {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+.figure__caption i {
+  position: absolute;
+  top: 10px;
+  left: auto;
+  bottom: auto;
+  right: 20px;
+  font-size: 20px;
 }
 
 .menu-grid {
