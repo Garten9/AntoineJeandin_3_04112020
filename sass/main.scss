@@ -43,6 +43,53 @@ $border-radius: 15px;
   right:$right;
 }
 
+@keyframes croc{
+  0%{
+    transform: translateX(-100px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+@keyframes page{
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+.load{
+  @include position(relative,200px);
+  width:100px;
+  margin: auto;
+  margin-top: -100px;
+
+
+  &__burger{
+    font-size: 100px;
+    color: $clr-1;
+  }
+
+  &__croc{
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color:white;
+
+  }
+
+}
+
+.page{
+  animation: page 2000ms;
+  animation-delay: 2000ms;
+  animation-fill-mode: backwards;
+}
+
 body {
   margin: unset;
   font-family: map-get($font, font-text), Arial, serif;
@@ -60,10 +107,24 @@ body {
   text-decoration: none;
   color: white;
   box-shadow: 5px 5px 5px darken($clr-white,10%);
+  position: relative;
+  z-index: 1;
 
   &:hover{
-    background: linear-gradient(lighten($clr-2,10%),lighten($clr-1,10%));
     box-shadow: 5px 5px 5px darken($clr-white,15%);
+    &::after{
+      opacity:1;
+    }
+  }
+
+  &::after{
+    content: "";
+    border-radius: 1.5em;
+    @include position(absolute,0,0,0,0);
+    background: linear-gradient(lighten($clr-2,10%),lighten($clr-1,10%));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 250ms ease-in-out;
   }
 }
 
@@ -235,9 +296,30 @@ body {
       margin-bottom: 0px;
     }
 
+
     i{
       @include position(absolute,10px,auto,auto,20px);
       font-size: 20px;
+      z-index: 1;
+      &:hover{
+        &::after{
+          transform:scale(1);
+        }
+      }
+
+      &::after{
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content:"\f004";
+        background: -webkit-linear-gradient($clr-2,$clr-3);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        @include position(absolute,0,0,0,0);
+        transform-origin: 50%  100%;
+        transform:scale(0);
+        z-index: -1;
+        transition: transform 800ms ease-in-out;
+      }
     }
   }
 

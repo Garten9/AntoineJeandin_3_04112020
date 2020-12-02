@@ -10,6 +10,49 @@
   font-weight: normal;
   font-style: normal;
 }
+@keyframes croc {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes page {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.load {
+  position: relative;
+  top: 200px;
+  left: auto;
+  bottom: auto;
+  right: auto;
+  width: 100px;
+  margin: auto;
+  margin-top: -100px;
+}
+.load__burger {
+  font-size: 100px;
+  color: #9356DC;
+}
+.load__croc {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.page {
+  animation: page 2000ms;
+  animation-delay: 2000ms;
+  animation-fill-mode: backwards;
+}
+
 body {
   margin: unset;
   font-family: robotoregular, Arial, serif;
@@ -27,10 +70,27 @@ body {
   text-decoration: none;
   color: white;
   box-shadow: 5px 5px 5px #e6e6e6;
+  position: relative;
+  z-index: 1;
 }
 .btn:hover {
-  background: linear-gradient(#fface8, #ae80e5);
   box-shadow: 5px 5px 5px #d9d9d9;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  border-radius: 1.5em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(#fface8, #ae80e5);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms ease-in-out;
 }
 
 .header {
@@ -194,6 +254,27 @@ body {
   bottom: auto;
   right: 20px;
   font-size: 20px;
+  z-index: 1;
+}
+.figure__caption i:hover::after {
+  transform: scale(1);
+}
+.figure__caption i::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "";
+  background: -webkit-linear-gradient(#FF79DA, #99E2D0);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform-origin: 50% 100%;
+  transform: scale(0);
+  z-index: -1;
+  transition: transform 800ms ease-in-out;
 }
 
 .menu-grid {
