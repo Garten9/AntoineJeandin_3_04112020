@@ -12,10 +12,33 @@
 }
 @keyframes croc {
   0% {
-    transform: translateX(-100px);
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  56% {
+    opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    opacity: 0;
+  }
+}
+@keyframes rotateburger {
+  0% {
+    transform: rotate(0deg);
+  }
+  22% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5turn);
+  }
+  100% {
+    transform: rotate(5turn);
   }
 }
 @keyframes page {
@@ -24,6 +47,24 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes plat {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes add {
+  0% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0px);
   }
 }
 .load {
@@ -35,6 +76,7 @@
   width: 100px;
   margin: auto;
   margin-top: -100px;
+  animation: rotateburger 1.7s cubic-bezier(0.98, 0.09, 0.11, 0.98) 500ms infinite;
 }
 .load__burger {
   font-size: 100px;
@@ -45,12 +87,32 @@
   height: 30px;
   border-radius: 50%;
   background-color: white;
+  animation: croc 1.7s 500ms backwards infinite;
+}
+.load__croc--1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: auto;
+  right: auto;
+}
+.load__croc--2 {
+  position: absolute;
+  top: 15px;
+  left: -2px;
+  bottom: auto;
+  right: auto;
+}
+.load__croc--3 {
+  position: absolute;
+  top: 25px;
+  left: -10px;
+  bottom: auto;
+  right: auto;
 }
 
 .page {
-  animation: page 2000ms;
-  animation-delay: 2000ms;
-  animation-fill-mode: backwards;
+  animation: page 500ms 3s both;
 }
 
 body {
@@ -287,6 +349,7 @@ body {
   left: auto;
   bottom: auto;
   right: auto;
+  z-index: 100;
 }
 .menu-grid__title {
   margin: unset;
@@ -313,7 +376,7 @@ body {
   font-size: 1em;
   margin-top: 30px;
 }
-.menu-grid__text:after {
+.menu-grid__text::after {
   content: "";
   display: block;
   width: 40px;
@@ -327,10 +390,49 @@ body {
 .menu-plat {
   background-color: white;
   border-radius: 15px;
-  width: 95%;
+  width: 90%;
   margin: auto;
+  margin-top: 15px;
+  padding-left: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
   position: relative;
   box-shadow: 5px 5px 5px #e6e6e6;
+  z-index: 1;
+  overflow: hidden;
+}
+.menu-plat:hover .add {
+  transform: translateX(0px);
+}
+.menu-plat:hover .check {
+  transform: rotate(0);
+}
+.menu-plat:hover .menu-plat__prix {
+  transform: translate(-60px);
+}
+.menu-plat .add {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: auto;
+  bottom: auto;
+  right: 0px;
+  width: 60px;
+  height: -webkit-fill-available;
+  color: white;
+  background-color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: inherit;
+  border-bottom-right-radius: inherit;
+  z-index: -100;
+  transform: translateX(60px);
+  transition: transform 430ms ease-in-out;
+}
+.menu-plat .check {
+  transform: rotate(-1turn);
+  transition: transform 330ms ease-in-out 100ms;
 }
 .menu-plat__prix {
   position: absolute;
@@ -340,21 +442,58 @@ body {
   right: 20px;
   margin: unset;
   font-weight: bold;
+  transition: transform 430ms ease-in-out;
 }
 .menu-plat__nom {
-  position: relative;
-  top: 12px;
-  left: 10px;
-  bottom: auto;
-  right: auto;
   font-size: 1.2em;
+  margin: unset;
 }
 .menu-plat__description {
-  position: relative;
-  top: -12px;
-  left: 10px;
-  bottom: auto;
-  right: auto;
+  margin: unset;
+}
+.menu-plat--0 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 0ms;
+}
+.menu-plat--1 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 70ms;
+}
+.menu-plat--2 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 140ms;
+}
+.menu-plat--3 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 210ms;
+}
+.menu-plat--4 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 280ms;
+}
+.menu-plat--5 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 350ms;
+}
+.menu-plat--6 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 420ms;
+}
+.menu-plat--7 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 490ms;
+}
+.menu-plat--8 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 560ms;
+}
+.menu-plat--9 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 630ms;
+}
+.menu-plat--10 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 700ms;
 }
 
 .menu-img {
