@@ -51,6 +51,27 @@ $plat-delay:70ms;
   right:$right;
 }
 
+@mixin petitspoints($min-width,$max-width){
+  @media all and (min-width: $min-width) and (max-width: $max-width){
+    &:hover{
+      &::after{
+        transform:translateX(-30px);
+        opacity: 1;
+      }
+    }
+    &::after{
+      content:"...";
+      @include position(absolute,auto,auto,12px,30px);
+      opacity: 0;
+      width: 70px;
+      padding-left: 2px;
+      transition: all 430ms;
+      z-index: 1;
+      background-color: $clr-white;
+    }
+  }
+}
+
 @keyframes croc{
   0%{
     opacity: 0;
@@ -505,7 +526,7 @@ body {
     margin: unset;
     font-weight: bold;
     transition: transform 430ms ease-in-out;
-    z-index: 200;
+    z-index: 2;
   }
 
   &__nom{
@@ -532,23 +553,70 @@ body {
 .menu-palette{
   .menu-plat{
     &--2{
-      /* ajouter une media queri entre 340 et 370pix */
-      &:hover{
+      @media all and (max-width: 370px){
+        &:hover{
+          &::after{
+            transform:translateX(-30px);
+            opacity: 1;
+          }
+        }
         &::after{
-          transform:translateX(-40px);
-          opacity: 1;
+          content:"...";
+          @include position(absolute,auto,auto,12px,30px);
+          opacity: 0;
+          width: 70px;
+          padding-left: 2px;
+          transition: all 430ms;
+          z-index: 1;
+          background-color: $clr-white;
         }
       }
-      &::after{
-        content:"...";
-        @include position(absolute,auto,auto,12px,30px);
-        opacity: 0;
-        width: 60px;
-        padding-left: 2px;
-        transition: all 430ms;
-        z-index: 100;
-        background-color: $clr-white;
+    }
+
+    &--3{
+      @media all and (min-width: 368px) and (max-width: 430px){
+        &:hover{
+          &::after{
+            transform:translateX(-30px);
+            opacity: 1;
+          }
+        }
+        &::after{
+          content:"...";
+          @include position(absolute,auto,auto,12px,30px);
+          opacity: 0;
+          width: 70px;
+          padding-left: 2px;
+          transition: all 430ms;
+          z-index: 1;
+          background-color: $clr-white;
+        }
       }
+    }
+
+    &--4{
+      @media all and (min-width: 405px) and (max-width: 470px){
+        &:hover{
+          &::after{
+            transform:translateX(-30px);
+            opacity: 1;
+          }
+        }
+        &::after{
+          content:"...";
+          @include position(absolute,auto,auto,12px,30px);
+          opacity: 0;
+          width: 70px;
+          padding-left: 2px;
+          transition: all 430ms;
+          z-index: 1;
+          background-color: $clr-white;
+        }
+      }
+    }
+
+    &--8{
+      @include petitspoints(0px,410px);
     }
   }
 }

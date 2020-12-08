@@ -444,7 +444,7 @@ body {
   margin: unset;
   font-weight: bold;
   transition: transform 430ms ease-in-out;
-  z-index: 200;
+  z-index: 2;
 }
 .menu-plat__nom {
   font-size: 1.2em;
@@ -500,26 +500,85 @@ body {
   animation-delay: 700ms;
 }
 
-.menu-palette .menu-plat--2 {
-  /* ajouter une media queri entre 340 et 370pix */
+@media all and (max-width: 370px) {
+  .menu-palette .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--2::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
 }
-.menu-palette .menu-plat--2:hover::after {
-  transform: translateX(-40px);
-  opacity: 1;
+@media all and (min-width: 368px) and (max-width: 430px) {
+  .menu-palette .menu-plat--3:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--3::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
 }
-.menu-palette .menu-plat--2::after {
-  content: "...";
-  position: absolute;
-  top: auto;
-  left: auto;
-  bottom: 12px;
-  right: 30px;
-  opacity: 0;
-  width: 60px;
-  padding-left: 2px;
-  transition: all 430ms;
-  z-index: 100;
-  background-color: white;
+@media all and (min-width: 405px) and (max-width: 470px) {
+  .menu-palette .menu-plat--4:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--4::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 410px) {
+  .menu-palette .menu-plat--8:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--8::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
 }
 
 .menu-img {
