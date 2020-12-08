@@ -118,6 +118,7 @@
 body {
   margin: unset;
   font-family: robotoregular, Arial, serif;
+  min-width: 350px;
 }
 
 .btn {
@@ -411,7 +412,6 @@ body {
   transform: translate(-60px);
 }
 .menu-plat .add {
-  content: "";
   position: absolute;
   top: 0px;
   left: auto;
@@ -439,18 +439,21 @@ body {
   position: absolute;
   top: auto;
   left: auto;
-  bottom: 10px;
+  bottom: 12px;
   right: 20px;
   margin: unset;
   font-weight: bold;
   transition: transform 430ms ease-in-out;
+  z-index: 200;
 }
 .menu-plat__nom {
   font-size: 1.2em;
   margin: unset;
+  padding-right: 60px;
 }
 .menu-plat__description {
   margin: unset;
+  padding-right: 60px;
 }
 .menu-plat--0 {
   animation: plat 300ms ease-in-out backwards;
@@ -495,6 +498,28 @@ body {
 .menu-plat--10 {
   animation: plat 300ms ease-in-out backwards;
   animation-delay: 700ms;
+}
+
+.menu-palette .menu-plat--2 {
+  /* ajouter une media queri entre 340 et 370pix */
+}
+.menu-palette .menu-plat--2:hover::after {
+  transform: translateX(-40px);
+  opacity: 1;
+}
+.menu-palette .menu-plat--2::after {
+  content: "...";
+  position: absolute;
+  top: auto;
+  left: auto;
+  bottom: 12px;
+  right: 30px;
+  opacity: 0;
+  width: 60px;
+  padding-left: 2px;
+  transition: all 430ms;
+  z-index: 100;
+  background-color: white;
 }
 
 .menu-img {

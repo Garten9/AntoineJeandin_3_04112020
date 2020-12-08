@@ -158,6 +158,7 @@ $plat-delay:70ms;
 body {
   margin: unset;
   font-family: map-get($font, font-text), Arial, serif;
+  min-width: 350px;
 }
 
 .btn{
@@ -475,7 +476,7 @@ body {
   }
 
   .add{
-    content: "";
+    // content: "";
     @include position(absolute, 0px, auto, auto, -60px);
     width:60px;
     height: -webkit-fill-available;
@@ -500,27 +501,54 @@ body {
 
 
   &__prix{
-    @include position(absolute,auto,auto,10px,20px);
+    @include position(absolute,auto,auto,12px,20px);
     margin: unset;
     font-weight: bold;
     transition: transform 430ms ease-in-out;
+    z-index: 200;
   }
 
   &__nom{
     // @include position(relative,12px,10px);
     font-size: 1.2em;
     margin:unset;
+    padding-right: 60px;
   }
 
   &__description{
     // @include position(relative,-12px,10px);
     margin:unset;
+    padding-right: 60px;
   }
 
   @for $i from 0 through $nb-plat {
     &--#{$i} {
       animation: plat $plat-duration ease-in-out backwards;
       animation-delay: $plat-delay * $i;
+    }
+  }
+}
+
+.menu-palette{
+  .menu-plat{
+    &--2{
+      /* ajouter une media queri entre 340 et 370pix */
+      &:hover{
+        &::after{
+          transform:translateX(-40px);
+          opacity: 1;
+        }
+      }
+      &::after{
+        content:"...";
+        @include position(absolute,auto,auto,12px,30px);
+        opacity: 0;
+        width: 60px;
+        padding-left: 2px;
+        transition: all 430ms;
+        z-index: 100;
+        background-color: $clr-white;
+      }
     }
   }
 }
