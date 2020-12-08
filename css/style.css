@@ -402,7 +402,7 @@ body {
   overflow: hidden;
 }
 .menu-plat:hover .add {
-  transform: translateX(0px);
+  transform: translateX(-60px);
 }
 .menu-plat:hover .check {
   transform: rotate(0);
@@ -416,7 +416,7 @@ body {
   top: 0px;
   left: auto;
   bottom: auto;
-  right: 0px;
+  right: -60px;
   width: 60px;
   height: -webkit-fill-available;
   color: white;
@@ -427,12 +427,13 @@ body {
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
   z-index: -100;
-  transform: translateX(60px);
+  transform: translateX(0px);
   transition: transform 430ms ease-in-out;
 }
 .menu-plat .check {
   transform: rotate(-1turn);
   transition: transform 330ms ease-in-out 100ms;
+  font-size: 25px;
 }
 .menu-plat__prix {
   position: absolute;
