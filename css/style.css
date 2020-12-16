@@ -76,7 +76,7 @@
   width: 100px;
   margin: auto;
   margin-top: -100px;
-  animation: rotateburger 1.7s cubic-bezier(0.98, 0.09, 0.11, 0.98) 500ms infinite;
+  animation: rotateburger 1.7s cubic-bezier(0.98, 0.09, 0.11, 0.98) 500ms 3;
 }
 .load__burger {
   font-size: 100px;
@@ -87,7 +87,7 @@
   height: 30px;
   border-radius: 50%;
   background-color: white;
-  animation: croc 1.7s 500ms backwards infinite;
+  animation: croc 1.7s 500ms backwards 3;
 }
 .load__croc--1 {
   position: absolute;
@@ -122,14 +122,14 @@ body {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 1.5em;
   background: linear-gradient(#FF79DA, #9356DC);
   height: 3em;
   width: 50%;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
   color: white;
   box-shadow: 5px 5px 5px #e6e6e6;
@@ -159,7 +159,7 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 .header__heading {
   font-family: Shrikhand, Arial, serif;
@@ -178,14 +178,11 @@ body {
 
 .location {
   display: flex;
-  background-color: #ebebeb;
   justify-content: center;
   align-items: center;
+  background-color: #ebebeb;
   height: 50px;
   box-shadow: inset 0px 5px 2px #dbdbdb;
-}
-.location form {
-  width: 40%;
 }
 .location__input {
   color: black;
@@ -195,10 +192,11 @@ body {
 }
 
 .presentation {
-  background-color: whitesmoke;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
+  flex-direction: column;
   text-align: center;
   padding-top: 40px;
   padding-bottom: 60px;
@@ -350,7 +348,7 @@ body {
   left: auto;
   bottom: auto;
   right: auto;
-  z-index: 100;
+  z-index: 3;
 }
 .menu-grid__title {
   margin: unset;
@@ -426,7 +424,7 @@ body {
   align-items: center;
   border-top-right-radius: inherit;
   border-bottom-right-radius: inherit;
-  z-index: -100;
+  z-index: -2;
   transform: translateX(0px);
   transition: transform 430ms ease-in-out;
 }
