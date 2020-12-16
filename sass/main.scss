@@ -33,15 +33,11 @@ $border-radius: 15px;
 $load-duration:1.7s;
 $load-delay:500ms;
 
-$nb-plat:10;
+$nb-plat:12;
 
 $plat-duration:300ms;
 $plat-delay:70ms;
 
-// @mixin position($type,){
-//   position :relative;
-//   top :$dist;
-// }
 
 @mixin position($type, $top:auto, $left:auto, $bottom:auto, $right:auto){
   position:$type;
@@ -222,7 +218,6 @@ body {
 
 
   &__heading {
-    // height: 30px;
     font-family: map-get($font, font-titre), Arial, serif;
     margin-top: 10px;
     margin-bottom: 6px;
@@ -429,7 +424,6 @@ body {
   z-index: 100;
 
   &__title{
-    // @include position(relative,30px,20px);
     margin: unset;
     font-family: map-get($font, font-titre), Arial, serif;
     font-size: 1.7em;
@@ -484,13 +478,10 @@ body {
   &:hover{
     .add{
       transform: translateX(-60px);
-      // width:70px;
     }
     .check{
       transform:rotate(0);
     }
-    // animation:add 500ms ease-in-out backwards;
-    // animation:add 500ms ease-in-out alternate;
     .menu-plat__prix{
       transform: translate(-60px);
     }
@@ -530,14 +521,12 @@ body {
   }
 
   &__nom{
-    // @include position(relative,12px,10px);
     font-size: 1.2em;
     margin:unset;
     padding-right: 60px;
   }
 
   &__description{
-    // @include position(relative,-12px,10px);
     margin:unset;
     padding-right: 60px;
   }
@@ -553,77 +542,92 @@ body {
 .menu-palette{
   .menu-plat{
     &--2{
-      @media all and (max-width: 370px){
-        &:hover{
-          &::after{
-            transform:translateX(-30px);
-            opacity: 1;
-          }
-        }
-        &::after{
-          content:"...";
-          @include position(absolute,auto,auto,12px,30px);
-          opacity: 0;
-          width: 70px;
-          padding-left: 2px;
-          transition: all 430ms;
-          z-index: 1;
-          background-color: $clr-white;
-        }
-      }
+      @include petitspoints(0px,370px);
     }
 
     &--3{
-      @media all and (min-width: 368px) and (max-width: 430px){
-        &:hover{
-          &::after{
-            transform:translateX(-30px);
-            opacity: 1;
-          }
-        }
-        &::after{
-          content:"...";
-          @include position(absolute,auto,auto,12px,30px);
-          opacity: 0;
-          width: 70px;
-          padding-left: 2px;
-          transition: all 430ms;
-          z-index: 1;
-          background-color: $clr-white;
-        }
-      }
+      @include petitspoints(368px,430px);
     }
 
-    &--4{
-      @media all and (min-width: 405px) and (max-width: 470px){
-        &:hover{
-          &::after{
-            transform:translateX(-30px);
-            opacity: 1;
-          }
-        }
-        &::after{
-          content:"...";
-          @include position(absolute,auto,auto,12px,30px);
-          opacity: 0;
-          width: 70px;
-          padding-left: 2px;
-          transition: all 430ms;
-          z-index: 1;
-          background-color: $clr-white;
-        }
-      }
+    &--5{
+      @include petitspoints(405px,470px);
     }
 
-    &--8{
+    &--6{
+      @include petitspoints(375px,435px);
+    }
+
+    &--10{
       @include petitspoints(0px,410px);
+    }
+
+    &--11{
+      @include petitspoints(387px,450px);
     }
   }
 }
 
+.menu-note{
+  .menu-plat{
+    &--1{
+      @include petitspoints(376px,435px);
+    }
+
+    &--2{
+      @include petitspoints(0px,360px);
+    }
+
+    &--4{
+      @include petitspoints(0px,380px);
+    }
+
+    &--6{
+      @include petitspoints(0px,355px);
+    }
+
+    &--8{
+      @include petitspoints(0px,400px);
+    }
+
+    &--10{
+      @include petitspoints(399px,460px);
+    }
+
+  }
+}
+
+.menu-francaise{
+  .menu-plat{
+
+    &--2{
+      @include petitspoints(0px,360px);
+    }
+
+    &--5{
+      @include petitspoints(370px,430px);
+    }
+
+    &--6{
+      @include petitspoints(0px,400px);
+    }
+
+    &--7{
+      @include petitspoints(355px,415px);
+    }
+  }
+}
+
+.menu-delice{
+  .menu-plat{
+    &--2{
+      @include petitspoints(0px,390px);
+    }
+  }
+}
+
+
 .menu-img {
   width: 100%;
-  // @include position(relative,-15px);
 }
 
 .figure {
@@ -643,9 +647,6 @@ body {
   flex-direction: column;
 
   &__logo{
-    // width: 120px;
-    // filter: invert(100%);
-    // margin-bottom: 30px;
     font-family: map-get($font, font-titre), Arial, serif;
     margin-top: -10px;
 

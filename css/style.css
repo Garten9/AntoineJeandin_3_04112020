@@ -499,8 +499,16 @@ body {
   animation: plat 300ms ease-in-out backwards;
   animation-delay: 700ms;
 }
+.menu-plat--11 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 770ms;
+}
+.menu-plat--12 {
+  animation: plat 300ms ease-in-out backwards;
+  animation-delay: 840ms;
+}
 
-@media all and (max-width: 370px) {
+@media all and (min-width: 0px) and (max-width: 370px) {
   .menu-palette .menu-plat--2:hover::after {
     transform: translateX(-30px);
     opacity: 1;
@@ -541,11 +549,31 @@ body {
   }
 }
 @media all and (min-width: 405px) and (max-width: 470px) {
-  .menu-palette .menu-plat--4:hover::after {
+  .menu-palette .menu-plat--5:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--4::after {
+  .menu-palette .menu-plat--5::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 375px) and (max-width: 435px) {
+  .menu-palette .menu-plat--6:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--6::after {
     content: "...";
     position: absolute;
     top: auto;
@@ -561,11 +589,254 @@ body {
   }
 }
 @media all and (min-width: 0px) and (max-width: 410px) {
-  .menu-palette .menu-plat--8:hover::after {
+  .menu-palette .menu-plat--10:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--8::after {
+  .menu-palette .menu-plat--10::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 387px) and (max-width: 450px) {
+  .menu-palette .menu-plat--11:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-palette .menu-plat--11::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+
+@media all and (min-width: 376px) and (max-width: 435px) {
+  .menu-note .menu-plat--1:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--1::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 360px) {
+  .menu-note .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--2::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 380px) {
+  .menu-note .menu-plat--4:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--4::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 355px) {
+  .menu-note .menu-plat--6:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--6::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 400px) {
+  .menu-note .menu-plat--8:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--8::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 399px) and (max-width: 460px) {
+  .menu-note .menu-plat--10:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-note .menu-plat--10::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 360px) {
+  .menu-francaise .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-francaise .menu-plat--2::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 370px) and (max-width: 430px) {
+  .menu-francaise .menu-plat--5:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-francaise .menu-plat--5::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 0px) and (max-width: 400px) {
+  .menu-francaise .menu-plat--6:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-francaise .menu-plat--6::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 355px) and (max-width: 415px) {
+  .menu-francaise .menu-plat--7:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-francaise .menu-plat--7::after {
+    content: "...";
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+
+@media all and (min-width: 0px) and (max-width: 390px) {
+  .menu-delice .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-delice .menu-plat--2::after {
     content: "...";
     position: absolute;
     top: auto;
