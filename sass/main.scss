@@ -1,4 +1,4 @@
-@font-face { /* police utilisé pour le site */
+@font-face { /* police utilisé pour les titres du site */
   font-family: 'Shrikhand';
   src: url('../font/Shrikhand.ttf') format('truetype'),
   url('../font/Shrikhand.otf') format('embedded-opentype'),
@@ -8,38 +8,38 @@
   url('../font/Shrikhand.eot') format('eot');
 }
 
-@font-face {
-    font-family: 'robotoregular';
-    src: url('../font/Roboto-Regular-webfont.eot') format('embedded-opentype'),
-         url('../font/Roboto-Regular-webfont.woff') format('woff'),
-         url('../font/Roboto-Regular-webfont.ttf') format('truetype'),
-         url('../font/Roboto-Regular-webfont.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@font-face { /* police pour les autres texte */
+  font-family: 'robotoregular';
+  src: url('../font/Roboto-Regular-webfont.eot') format('embedded-opentype'),
+  url('../font/Roboto-Regular-webfont.woff') format('woff'),
+  url('../font/Roboto-Regular-webfont.ttf') format('truetype'),
+  url('../font/Roboto-Regular-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-$font: (font-titre:Shrikhand, font-text:robotoregular);
+$font: (font-titre:Shrikhand, font-text:robotoregular); /* définit la map des polices */
 
 
-$clr-1:#9356DC;
-$clr-2:#FF79DA;
-$clr-3:#99E2D0;
+$clr-1:#9356DC; /* couleur principale */
+$clr-2:#FF79DA; /* couleur secondaire */
+$clr-3:#99E2D0; /* couleur tertiaire */
 $clr-white:white;
 
 $margin-title:20px;
 
 $border-radius: 15px;
 
-$load-duration:1.7s;
-$load-delay:500ms;
+$load-duration:1.7s; /* duree de l'animation du loading spinner */
+$load-delay:500ms; /* delay de l'animation du loading spinner */
 
-$nb-plat:12;
+$nb-plat:12; /* nombre maximal de plat d'un menu */
 
-$plat-duration:300ms;
-$plat-delay:70ms;
+$plat-duration:300ms; /* duree de l'animation de l'affichage des plats */
+$plat-delay:70ms; /* delay de l'animation de l'affichage de spalts */
 
 
-@mixin position($type, $top:auto, $left:auto, $bottom:auto, $right:auto){
+@mixin position($type, $top:auto, $left:auto, $bottom:auto, $right:auto){ /* permet de positionner un élément */
   position:$type;
   top:$top;
   left:$left;
@@ -47,17 +47,17 @@ $plat-delay:70ms;
   right:$right;
 }
 
-@mixin flexcenter{
+@mixin flexcenter{ /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin shadow($darken:10%){
+@mixin shadow($darken:10%){ /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px darken($clr-white,$darken);
 }
 
-@mixin petitspoints($min-width,$max-width){
+@mixin petitspoints($min-width,$max-width){ /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
   @media all and (min-width: $min-width) and (max-width: $max-width){
     &:hover{
       &::after{
@@ -78,7 +78,8 @@ $plat-delay:70ms;
   }
 }
 
-@keyframes croc{
+
+@keyframes croc{ /* animation des crocs dans le burger du loading spinner */
   0%{
     opacity: 0;
   }
@@ -93,10 +94,10 @@ $plat-delay:70ms;
   }
   100%{
    opacity: 0;
-  }
+ }
 }
 
-@keyframes rotateburger{
+@keyframes rotateburger{ /* animation de la rotation du burger */
   0%{
     transform:rotate(0deg);
   }
@@ -111,7 +112,7 @@ $plat-delay:70ms;
   }
 }
 
-@keyframes page{
+@keyframes page{ /* fais apparaitre la page */
   0%{
     opacity:0;
   }
@@ -120,7 +121,7 @@ $plat-delay:70ms;
   }
 }
 
-@keyframes plat{
+@keyframes plat{ /* animation de l'apparition d'un plat */
   0%{
     opacity: 0;
     transform: translateY(20px);
@@ -134,17 +135,17 @@ $plat-delay:70ms;
   }
 }
 
-@keyframes add{
+/* @keyframes add{
   0%{
     transform : translateX(80px);
   }
   100%{
     transform : translateX(0px);
   }
-}
+} */
 
 
-.load{
+.load{ /* définit les propriétés relative au loading spinner et joue son animation */
   @include position(relative,200px);
   width:100px;
   margin: auto;
@@ -152,12 +153,12 @@ $plat-delay:70ms;
   animation: rotateburger $load-duration cubic-bezier(0.98,0.09,0.11,0.98) $load-delay 3;
 
 
-  &__burger{
+  &__burger{ /* propriétés du burger du spinner */
     font-size: 100px;
     color: $clr-1;
   }
 
-  &__croc{
+  &__croc{ /* propriétés des crocs du burger et animation des crocs */
     width:30px;
     height: 30px;
     border-radius: 50%;
@@ -178,22 +179,25 @@ $plat-delay:70ms;
 
 }
 
-.page{
+.page{ /* fais apparaitre la page après le loading spinner */
   animation: page 500ms 3s both;
 }
 
-body {
+body { /* propriétés relatives à toutes les pages */
   margin: unset;
   font-family: map-get($font, font-text), Arial, serif;
   min-width: 350px;
+  max-width: 1440px;
+  margin: auto;
 }
 
-.btn{
+.btn{ /* propriétés des boutons */
   @include flexcenter;
   border-radius: 1.5em;
   background: linear-gradient($clr-2,$clr-1);
   height: 3em;
   width: 50%;
+  max-width: 300px;
   margin: auto;
   text-decoration: none;
   color: $clr-white;
@@ -201,14 +205,14 @@ body {
   position: relative;
   z-index: 1;
 
-  &:hover{
-     @include shadow(15%);
-    &::after{
-      opacity:1;
-    }
+  &:hover{ /* ajoute une ombre au survol */
+   @include shadow(15%);
+   &::after{ /* fais apparaitre le changement de fond au survol */
+    opacity:1;
   }
+}
 
-  &::after{
+  &::after{ /* permet d'éclaircir la couleur du fond au survol */
     content: "";
     border-radius: 1.5em;
     @include position(absolute,0,0,0,0);
@@ -219,11 +223,11 @@ body {
   }
 }
 
-.header{
+.header{ /* propriétés relatives au haut de page */
   @include flexcenter;
 
 
-  &__heading {
+  &__heading { /* propriétés du titre de la page */
     font-family: map-get($font, font-titre), Arial, serif;
     margin-top: 10px;
     margin-bottom: 6px;
@@ -231,23 +235,27 @@ body {
   }
 
 
-  &__back {
+  &__back { /* propriétés de la flèche de retour des pages des menus */
     @include position(absolute,25px,25px);
     font-size: 20px;
     color: black;
   }
+
+  &--menu{ /* permet que le haut de page reste visible malgrés les changement induits pour les grands écrans */
+    @media all and (min-width: 770px){
+      position: relative;
+      z-index: 1;
+      background-color: white;
+    }
+
+  }
 }
 
-.location{
+.location{ /* propriétés du bandeau de recherche de ville */
   @include flexcenter;
   background-color: darken($clr-white,8%);
   height :50px;
   box-shadow: inset 0px 5px 2px darken($clr-white,14%) ;
-
-  @media all and (min-width: 770px ){
-
-  }
-
 
   &__input{
     color: black;
@@ -257,8 +265,14 @@ body {
   }
 }
 
+@media all and (min-width: 770px){ /* permet d'afficher les sections presentation et fonctionnement cote à cote sur les grands ecrans */
+  .pres-fonct{
+    display: flex;
+  }
 
-.presentation{
+}
+
+.presentation{ /* propriétés de la section de présentation du site */
   @include flexcenter;
   background-color: darken($clr-white,4%);
   flex-direction: column;
@@ -266,33 +280,45 @@ body {
   padding-top: 40px;
   padding-bottom: 60px;
 
-  &__title{
+  @media all and (min-width: 770px){ /* réduis la taille de la section pour les grands écran */
+    width: 50%;
+    min-height: 225px;
+  }
+
+  &__title{ /* titre de la section */
     margin-top: unset;
     width:70%;
 
   }
 
-  &__text{
+  &__text{ /* text de la section */
     margin-bottom: 25px;
     width:80%;
   }
 
-  &__btn{
+  &__btn{ /* spécificité du bouton de la section */
     width:65%;
   }
 }
 
-.fonctionnement{
+.fonctionnement{/* propriétés de la section expliquant le fonctionnement du site */
   display: flex;
   flex-direction: column;
   padding-top: 20px;
   padding-bottom: 40px;
 
-  &__title{
+  @media all and (min-width: 770px){ /* propriétés pour les grands ecrans */
+    width: 50%;
+    max-width: 720px;
+    background-color: $clr-white;
+  }
+
+
+  &__title{ /* titre de la section */
     margin-left: $margin-title;
   }
 
-  .etape{
+  .etape{ /* les différentes étapes du fonctionnement */
     display: flex;
     align-items: center;
     background-color: darken($clr-white,4%);
@@ -301,8 +327,9 @@ body {
     margin: auto;
     margin-bottom: 20px;
     border-radius: $border-radius;
+    max-width: 390px;
 
-    &__numero{
+    &__numero{ /* numéro des etapes */
       background-color: $clr-1;
       color: $clr-white;
       width: 22px;
@@ -311,30 +338,43 @@ body {
       @include position(relative,auto,-10px);
     }
 
-    &__icone{
+    &__icone{ /* icones relatif aux etapes */
       color: darken($clr-white,50%);
       margin-left: 10px;
       width: 19px;
       margin-right: 20px;
     }
 
-    &__text{
+    &__text{ /* texte des étapes */
       font-weight: 600;
     }
   }
 }
 
-.restaurant-grid{
+.restaurant-grid{ /* section contenant les liens des différents restaurants */
   background-color: darken($clr-white,4%);
   padding-top: 20px;
   padding-bottom: 140px;
 
-  &__title{
+  @media all and (min-width: 770px){ /*  change la couleur du fond et affiche les liens en grille sur grand écran */
+    background-color: darken($clr-white,8%);
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    padding-top: 80px;
+  }
+
+  &__title{ /* titre de la section */
     margin-left: $margin-title;
+
+    @media all and (min-width: 770px){ /* repositionne le titre pour les grands écrans */
+      @include position(absolute,0px);
+    }
+
   }
 }
 
-.restaurant-link{
+.restaurant-link{ /* liens vers les cartes des restaurants */
   background-color: $clr-white;
 
   width:90%;
@@ -347,7 +387,12 @@ body {
   border-radius: $border-radius;
   margin-bottom: 15px;
 
-  &__nouveau{
+  @media all and (min-width: 770px){ /* réduis la taille des liens sur grands écrans */
+    width: 40%;
+    margin-bottom: 30px;
+  }
+
+  &__nouveau{ /* la petite étiquette "nouveau" sur les liens correspondants */
     margin: unset;
     @include position(absolute, 15px, auto, auto,15px);
     color: darken($clr-3,40%);
@@ -357,9 +402,8 @@ body {
   }
 }
 
-.figure{
+.figure{ /* propriétés de l'image du restaurant et sa descrition */
   margin: unset;
-
 
   &__image{
     border-top-right-radius: $border-radius;
@@ -372,28 +416,28 @@ body {
     position: relative;
 
 
-    h3{
+    h3{ /* nom du restaurant */
       margin-top: 10px;
       margin-bottom: 0px;
     }
 
-    p{
+    p{ /* lieu du restaurant */
       margin-top: 5px;
       margin-bottom: 0px;
     }
 
 
-    i{
+    i{ /* icone coeur  */
       @include position(absolute,10px,auto,auto,20px);
       font-size: 20px;
       z-index: 1;
-      &:hover{
+      &:hover{ /* affiche le remplissage du coeur au survol */
         &::after{
           transform:scale(1);
         }
       }
 
-      &::after{
+      &::after{ /* remplissage du coeur */
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         content:"\f004";
@@ -419,7 +463,22 @@ body {
 
 
 
-.menu-grid{
+
+.menu-img { /* propriété de l'image du restaurant sur les pages des menus */
+  width: 100%;
+
+  @media all and (min-width: 770px){ /* repositionne l'image pour les grands écrans */
+    @include position(relative,-250px);
+
+    &--note{
+      @include position(relative,-500px);
+      max-height: 1450px;
+    }
+  }
+}
+
+
+.menu-grid{ /* bloc où sont affichés les différents plats */
   background-color: darken($clr-white,4%);
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
@@ -427,7 +486,29 @@ body {
   @include position(relative,-90px);
   z-index: 3;
 
-  &__title{
+  @media all and (min-width: 770px){ /* permet de réduire la taille de l'image du restaurant et d'afficher les plats en grille pour les grands écrans */
+
+    @include position(relative,-400px);
+
+    &--note{
+      @include position(relative,-900px);
+    }
+
+    &--francaise{
+      @include position(relative,-350px);
+    }
+
+    &__grille{
+      display: flex;
+      flex-wrap: wrap;
+      > div{
+        width:50%;
+      }
+    }
+
+  }
+
+  &__title{ /* nom du restaurant */
     margin: unset;
     font-family: map-get($font, font-titre), Arial, serif;
     font-size: 1.7em;
@@ -437,12 +518,12 @@ body {
     padding-top: 30px;
   }
 
-  &__heart{
+  &__heart{ /* icone coeur */
     @include position(absolute,30px,auto,auto,30px);
     font-size: 30px;
   }
 
-  &__text{
+  &__text{ /* type de plat (entree, plat, dessert) */
     margin: unset;
     margin-left:15px;
     font-weight: normal;
@@ -450,7 +531,7 @@ body {
     font-size: 1em;
     margin-top: 30px;
 
-    &::after{
+    &::after{ /* permet d'afficher le demi-soulignage */
       content: "";
       display: block;
       width:40px;
@@ -459,13 +540,16 @@ body {
     }
   }
 
-  &__btn{
+  &__btn{ /* spécificité du bouton de commande */
     margin-top: 50px;
+    @media all and (min-width: 770px){
+      margin: auto;
+    }
   }
 
 }
 
-.menu-plat{
+.menu-plat{ /* etiquette des plats */
   background-color: $clr-white;
   border-radius: 15px;
   width:90%;
@@ -479,19 +563,19 @@ body {
   z-index: 1;
   overflow: hidden;
 
-  &:hover{
+  &:hover{ /* animations au survol du plat */
     .add{
-      transform: translateX(-60px);
+      transform: translateX(-60px); /* fait apparaitre la bouton d'ajout vers la gauche */
     }
     .check{
-      transform:rotate(0);
+      transform:rotate(0); /* rotation de l'icone "check" */
     }
     .menu-plat__prix{
-      transform: translate(-60px);
+      transform: translate(-60px); /* translation du prix du plat */
     }
   }
 
-  .add{
+  .add{ /* propriétés de la coche qui apparait au survol*/
     @include position(absolute, 0px, auto, auto, -60px);
     width:60px;
     height: -webkit-fill-available;
@@ -506,14 +590,14 @@ body {
 
   }
 
-  .check{
+  .check{ /* propriétés de l'icone "check" */
     transform : rotate(-1turn);
     transition: transform 330ms ease-in-out 100ms;
     font-size: 25px;
   }
 
 
-  &__prix{
+  &__prix{ /* prix du plat */
     @include position(absolute,auto,auto,12px,20px);
     margin: unset;
     font-weight: bold;
@@ -521,18 +605,18 @@ body {
     z-index: 2;
   }
 
-  &__nom{
+  &__nom{ /* nom du plat */
     font-size: 1.2em;
     margin:unset;
     padding-right: 60px;
   }
 
-  &__description{
+  &__description{ /* description du plat */
     margin:unset;
     padding-right: 60px;
   }
 
-  @for $i from 0 through $nb-plat {
+  @for $i from 0 through $nb-plat { /* fais apparaitre les plats avec un petit delay entre chaque plat */
     &--#{$i} {
       animation: plat $plat-duration ease-in-out backwards;
       animation-delay: $plat-delay * $i;
@@ -540,104 +624,115 @@ body {
   }
 }
 
-.menu-palette{
-  .menu-plat{
-    &--2{
-      @include petitspoints(0px,370px);
-    }
+.menu-grid{ /* permet de rajoute les 3 petits points quand la description du plat est trop longue à l'apparition de la coche */
+  &--palette{
+    .menu-plat{
+      &--2{
+        @include petitspoints(0px,370px);
+      }
 
-    &--3{
-      @include petitspoints(368px,430px);
-    }
+      &--3{
+        @include petitspoints(368px,430px);
+        @include petitspoints(770px,870px);
+      }
 
-    &--5{
-      @include petitspoints(405px,470px);
-    }
+      &--5{
+        @include petitspoints(405px,470px);
+        @include petitspoints(810px,940px);
+      }
 
-    &--6{
-      @include petitspoints(375px,435px);
-    }
+      &--6{
+        @include petitspoints(375px,435px);
+        @include petitspoints(770px,875px);
+      }
 
-    &--10{
-      @include petitspoints(0px,410px);
-    }
+      &--10{
+        @include petitspoints(0px,410px);
+        @include petitspoints(770px,820px);
+      }
 
-    &--11{
-      @include petitspoints(387px,450px);
+      &--11{
+        @include petitspoints(387px,450px);
+        @include petitspoints(773px,905px);
+      }
+    }
+  }
+
+  &--note{
+    .menu-plat{
+      &--1{
+        @include petitspoints(376px,435px);
+        @include petitspoints(770px,880px);
+      }
+
+      &--2{
+        @include petitspoints(0px,360px);
+      }
+
+      &--4{
+        @include petitspoints(0px,380px);
+      }
+
+      &--6{
+        @include petitspoints(0px,355px);
+      }
+
+      &--8{
+        @include petitspoints(0px,400px);
+        @include petitspoints(770px,810px);
+      }
+
+      &--10{
+        @include petitspoints(399px,460px);
+        @include petitspoints(798px,920px);
+      }
+
+    }
+  }
+
+  &--francaise{
+    .menu-plat{
+
+      &--2{
+        @include petitspoints(0px,360px);
+      }
+
+      &--5{
+        @include petitspoints(370px,430px);
+        @include petitspoints(770px,860px);
+      }
+
+      &--6{
+        @include petitspoints(0px,400px);
+        @include petitspoints(770px,810px);
+      }
+
+      &--7{
+        @include petitspoints(355px,415px);
+        @include petitspoints(770px,860px);
+      }
+    }
+  }
+
+  &--delice{
+    .menu-plat{
+      &--2{
+        @include petitspoints(0px,390px);
+        @include petitspoints(770px,800px);
+      }
     }
   }
 }
 
-.menu-note{
-  .menu-plat{
-    &--1{
-      @include petitspoints(376px,435px);
-    }
 
-    &--2{
-      @include petitspoints(0px,360px);
-    }
-
-    &--4{
-      @include petitspoints(0px,380px);
-    }
-
-    &--6{
-      @include petitspoints(0px,355px);
-    }
-
-    &--8{
-      @include petitspoints(0px,400px);
-    }
-
-    &--10{
-      @include petitspoints(399px,460px);
-    }
-
-  }
-}
-
-.menu-francaise{
-  .menu-plat{
-
-    &--2{
-      @include petitspoints(0px,360px);
-    }
-
-    &--5{
-      @include petitspoints(370px,430px);
-    }
-
-    &--6{
-      @include petitspoints(0px,400px);
-    }
-
-    &--7{
-      @include petitspoints(355px,415px);
-    }
-  }
-}
-
-.menu-delice{
-  .menu-plat{
-    &--2{
-      @include petitspoints(0px,390px);
-    }
-  }
-}
-
-
-.menu-img {
-  width: 100%;
-}
 
 .figure {
-  &__image{
+  &__image{ /* l'image prend toute la largeur disponible */
     width: 100%;
   }
 }
 
-.footer {
+.footer { /* propriétés du pied de page */
   margin-top: -90px;
   background-color: darken($clr-white,80%);
   color: $clr-white;
@@ -647,25 +742,46 @@ body {
   display: flex;
   flex-direction: column;
 
-  &__logo{
+  @media all and (min-width: 770px){ /* repositionne le pied de page à cause des changement pour les grands écrans */
+    position: relative;
+
+    &--francaise{
+      margin-top: -350px;
+    }
+
+    &--note{
+      margin-top: -900px;
+    }
+
+    &--palette{
+      margin-top: -400px;
+    }
+
+    &--delice{
+      margin-top: -400px;
+    }
+
+  }
+
+  &__logo{ /* nom du site */
     font-family: map-get($font, font-titre), Arial, serif;
     margin-top: -10px;
 
   }
 
-  &__link{
+  &__link{ /* liens du pied de page */
     text-decoration: none;
     color: $clr-white;
     display: flex;
     align-items: center;
     margin-bottom: 5px;
 
-    p{
+    p{ /* texte des liens */
       margin:unset;
       padding-left: 10px;
     }
 
-    i{
+    i{ /* icone des liens */
       width: 20px;
     }
   }

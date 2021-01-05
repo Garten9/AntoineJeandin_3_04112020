@@ -1,16 +1,27 @@
 @charset "UTF-8";
 @font-face {
-  /* police utilisé pour le site */
+  /* police utilisé pour les titres du site */
   font-family: "Shrikhand";
   src: url("../font/Shrikhand.ttf") format("truetype"), url("../font/Shrikhand.otf") format("embedded-opentype"), url("../font/Shrikhand.woff") format("woff"), url("../font/Shrikhand.woff2") format("woff2"), url("../font/Shrikhand.svg") format("svg"), url("../font/Shrikhand.eot") format("eot");
 }
 @font-face {
+  /* police pour les autres texte */
   font-family: "robotoregular";
   src: url("../font/Roboto-Regular-webfont.eot") format("embedded-opentype"), url("../font/Roboto-Regular-webfont.woff") format("woff"), url("../font/Roboto-Regular-webfont.ttf") format("truetype"), url("../font/Roboto-Regular-webfont.svg") format("svg");
   font-weight: normal;
   font-style: normal;
 }
+/* définit la map des polices */
+/* couleur principale */
+/* couleur secondaire */
+/* couleur tertiaire */
+/* duree de l'animation du loading spinner */
+/* delay de l'animation du loading spinner */
+/* nombre maximal de plat d'un menu */
+/* duree de l'animation de l'affichage des plats */
+/* delay de l'animation de l'affichage de spalts */
 @keyframes croc {
+  /* animation des crocs dans le burger du loading spinner */
   0% {
     opacity: 0;
   }
@@ -28,6 +39,7 @@
   }
 }
 @keyframes rotateburger {
+  /* animation de la rotation du burger */
   0% {
     transform: rotate(0deg);
   }
@@ -42,6 +54,7 @@
   }
 }
 @keyframes page {
+  /* fais apparaitre la page */
   0% {
     opacity: 0;
   }
@@ -50,6 +63,7 @@
   }
 }
 @keyframes plat {
+  /* animation de l'apparition d'un plat */
   0% {
     opacity: 0;
     transform: translateY(20px);
@@ -59,15 +73,17 @@
     transform: translateY(0px);
   }
 }
-@keyframes add {
-  0% {
-    transform: translateX(80px);
+/* @keyframes add{
+  0%{
+    transform : translateX(80px);
   }
-  100% {
-    transform: translateX(0px);
+  100%{
+    transform : translateX(0px);
   }
-}
+} */
 .load {
+  /* définit les propriétés relative au loading spinner et joue son animation */
+  /* permet de positionner un élément */
   position: relative;
   top: 200px;
   left: auto;
@@ -79,10 +95,12 @@
   animation: rotateburger 1.7s cubic-bezier(0.98, 0.09, 0.11, 0.98) 500ms 3;
 }
 .load__burger {
+  /* propriétés du burger du spinner */
   font-size: 100px;
   color: #9356DC;
 }
 .load__croc {
+  /* propriétés des crocs du burger et animation des crocs */
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -90,6 +108,7 @@
   animation: croc 1.7s 500ms backwards 3;
 }
 .load__croc--1 {
+  /* permet de positionner un élément */
   position: absolute;
   top: 0px;
   left: 0px;
@@ -97,6 +116,7 @@
   right: auto;
 }
 .load__croc--2 {
+  /* permet de positionner un élément */
   position: absolute;
   top: 15px;
   left: -2px;
@@ -104,6 +124,7 @@
   right: auto;
 }
 .load__croc--3 {
+  /* permet de positionner un élément */
   position: absolute;
   top: 25px;
   left: -10px;
@@ -112,16 +133,22 @@
 }
 
 .page {
+  /* fais apparaitre la page après le loading spinner */
   animation: page 500ms 3s both;
 }
 
 body {
+  /* propriétés relatives à toutes les pages */
   margin: unset;
   font-family: robotoregular, Arial, serif;
   min-width: 350px;
+  max-width: 1440px;
+  margin: auto;
 }
 
 .btn {
+  /* propriétés des boutons */
+  /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,22 +156,29 @@ body {
   background: linear-gradient(#FF79DA, #9356DC);
   height: 3em;
   width: 50%;
+  max-width: 300px;
   margin: auto;
   text-decoration: none;
   color: white;
+  /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px #e6e6e6;
   position: relative;
   z-index: 1;
 }
 .btn:hover {
+  /* ajoute une ombre au survol */
+  /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px #d9d9d9;
 }
 .btn:hover::after {
+  /* fais apparaitre le changement de fond au survol */
   opacity: 1;
 }
 .btn::after {
+  /* permet d'éclaircir la couleur du fond au survol */
   content: "";
   border-radius: 1.5em;
+  /* permet de positionner un élément */
   position: absolute;
   top: 0;
   left: 0;
@@ -157,16 +191,21 @@ body {
 }
 
 .header {
+  /* propriétés relatives au haut de page */
+  /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .header__heading {
+  /* propriétés du titre de la page */
   font-family: Shrikhand, Arial, serif;
   margin-top: 10px;
   margin-bottom: 6px;
 }
 .header__back {
+  /* propriétés de la flèche de retour des pages des menus */
+  /* permet de positionner un élément */
   position: absolute;
   top: 25px;
   left: 25px;
@@ -175,8 +214,20 @@ body {
   font-size: 20px;
   color: black;
 }
+.header--menu {
+  /* permet que le haut de page reste visible malgrés les changement induits pour les grands écrans */
+}
+@media all and (min-width: 770px) {
+  .header--menu {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+  }
+}
 
 .location {
+  /* propriétés du bandeau de recherche de ville */
+  /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,7 +242,15 @@ body {
   margin-left: 10px;
 }
 
+@media all and (min-width: 770px) {
+  /* permet d'afficher les sections presentation et fonctionnement cote à cote sur les grands ecrans */
+  .pres-fonct {
+    display: flex;
+  }
+}
 .presentation {
+  /* propriétés de la section de présentation du site */
+  /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -201,43 +260,68 @@ body {
   padding-top: 40px;
   padding-bottom: 60px;
 }
+@media all and (min-width: 770px) {
+  .presentation {
+    /* réduis la taille de la section pour les grands écran */
+    width: 50%;
+    min-height: 225px;
+  }
+}
 .presentation__title {
+  /* titre de la section */
   margin-top: unset;
   width: 70%;
 }
 .presentation__text {
+  /* text de la section */
   margin-bottom: 25px;
   width: 80%;
 }
 .presentation__btn {
+  /* spécificité du bouton de la section */
   width: 65%;
 }
 
 .fonctionnement {
+  /* propriétés de la section expliquant le fonctionnement du site */
   display: flex;
   flex-direction: column;
   padding-top: 20px;
   padding-bottom: 40px;
 }
+@media all and (min-width: 770px) {
+  .fonctionnement {
+    /* propriétés pour les grands ecrans */
+    width: 50%;
+    max-width: 720px;
+    background-color: white;
+  }
+}
 .fonctionnement__title {
+  /* titre de la section */
   margin-left: 20px;
 }
 .fonctionnement .etape {
+  /* les différentes étapes du fonctionnement */
   display: flex;
   align-items: center;
   background-color: whitesmoke;
+  /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px #e6e6e6;
   width: 90%;
   margin: auto;
   margin-bottom: 20px;
   border-radius: 15px;
+  max-width: 390px;
 }
 .fonctionnement .etape__numero {
+  /* numéro des etapes */
   background-color: #9356DC;
   color: white;
   width: 22px;
   text-align: center;
   border-radius: 50%;
+  /* permet de positionner un élément */
   position: relative;
   top: auto;
   left: -10px;
@@ -245,29 +329,56 @@ body {
   right: auto;
 }
 .fonctionnement .etape__icone {
+  /* icones relatif aux etapes */
   color: gray;
   margin-left: 10px;
   width: 19px;
   margin-right: 20px;
 }
 .fonctionnement .etape__text {
+  /* texte des étapes */
   font-weight: 600;
 }
 
 .restaurant-grid {
+  /* section contenant les liens des différents restaurants */
   background-color: whitesmoke;
   padding-top: 20px;
   padding-bottom: 140px;
 }
+@media all and (min-width: 770px) {
+  .restaurant-grid {
+    /*  change la couleur du fond et affiche les liens en grille sur grand écran */
+    background-color: #ebebeb;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    padding-top: 80px;
+  }
+}
 .restaurant-grid__title {
+  /* titre de la section */
   margin-left: 20px;
+}
+@media all and (min-width: 770px) {
+  .restaurant-grid__title {
+    /* repositionne le titre pour les grands écrans */
+    /* permet de positionner un élément */
+    position: absolute;
+    top: 0px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
 }
 
 .restaurant-link {
+  /* liens vers les cartes des restaurants */
   background-color: white;
   width: 90%;
   margin: auto;
   display: block;
+  /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px #e6e6e6;
   text-decoration: none;
   color: black;
@@ -275,8 +386,17 @@ body {
   border-radius: 15px;
   margin-bottom: 15px;
 }
+@media all and (min-width: 770px) {
+  .restaurant-link {
+    /* réduis la taille des liens sur grands écrans */
+    width: 40%;
+    margin-bottom: 30px;
+  }
+}
 .restaurant-link__nouveau {
+  /* la petite étiquette "nouveau" sur les liens correspondants */
   margin: unset;
+  /* permet de positionner un élément */
   position: absolute;
   top: 15px;
   left: auto;
@@ -289,6 +409,7 @@ body {
 }
 
 .figure {
+  /* propriétés de l'image du restaurant et sa descrition */
   margin: unset;
 }
 .figure__image {
@@ -301,14 +422,18 @@ body {
   position: relative;
 }
 .figure__caption h3 {
+  /* nom du restaurant */
   margin-top: 10px;
   margin-bottom: 0px;
 }
 .figure__caption p {
+  /* lieu du restaurant */
   margin-top: 5px;
   margin-bottom: 0px;
 }
 .figure__caption i {
+  /* icone coeur  */
+  /* permet de positionner un élément */
   position: absolute;
   top: 10px;
   left: auto;
@@ -317,16 +442,21 @@ body {
   font-size: 20px;
   z-index: 1;
 }
+.figure__caption i:hover {
+  /* affiche le remplissage du coeur au survol */
+}
 .figure__caption i:hover::after {
   transform: scale(1);
 }
 .figure__caption i::after {
+  /* remplissage du coeur */
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "";
   background: -webkit-linear-gradient(#FF79DA, #99E2D0);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  /* permet de positionner un élément */
   position: absolute;
   top: 0;
   left: 0;
@@ -338,11 +468,38 @@ body {
   transition: transform 800ms ease-in-out;
 }
 
+.menu-img {
+  /* propriété de l'image du restaurant sur les pages des menus */
+  width: 100%;
+}
+@media all and (min-width: 770px) {
+  .menu-img {
+    /* repositionne l'image pour les grands écrans */
+    /* permet de positionner un élément */
+    position: relative;
+    top: -250px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+  .menu-img--note {
+    /* permet de positionner un élément */
+    position: relative;
+    top: -500px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    max-height: 1450px;
+  }
+}
+
 .menu-grid {
+  /* bloc où sont affichés les différents plats */
   background-color: whitesmoke;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   padding-bottom: 80px;
+  /* permet de positionner un élément */
   position: relative;
   top: -90px;
   left: auto;
@@ -350,7 +507,42 @@ body {
   right: auto;
   z-index: 3;
 }
+@media all and (min-width: 770px) {
+  .menu-grid {
+    /* permet de réduire la taille de l'image du restaurant et d'afficher les plats en grille pour les grands écrans */
+    /* permet de positionner un élément */
+    position: relative;
+    top: -400px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+  .menu-grid--note {
+    /* permet de positionner un élément */
+    position: relative;
+    top: -900px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+  .menu-grid--francaise {
+    /* permet de positionner un élément */
+    position: relative;
+    top: -350px;
+    left: auto;
+    bottom: auto;
+    right: auto;
+  }
+  .menu-grid__grille {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .menu-grid__grille > div {
+    width: 50%;
+  }
+}
 .menu-grid__title {
+  /* nom du restaurant */
   margin: unset;
   font-family: Shrikhand, Arial, serif;
   font-size: 1.7em;
@@ -360,6 +552,8 @@ body {
   padding-top: 30px;
 }
 .menu-grid__heart {
+  /* icone coeur */
+  /* permet de positionner un élément */
   position: absolute;
   top: 30px;
   left: auto;
@@ -368,6 +562,7 @@ body {
   font-size: 30px;
 }
 .menu-grid__text {
+  /* type de plat (entree, plat, dessert) */
   margin: unset;
   margin-left: 15px;
   font-weight: normal;
@@ -376,6 +571,7 @@ body {
   margin-top: 30px;
 }
 .menu-grid__text::after {
+  /* permet d'afficher le demi-soulignage */
   content: "";
   display: block;
   width: 40px;
@@ -383,10 +579,17 @@ body {
   margin-top: 3px;
 }
 .menu-grid__btn {
+  /* spécificité du bouton de commande */
   margin-top: 50px;
+}
+@media all and (min-width: 770px) {
+  .menu-grid__btn {
+    margin: auto;
+  }
 }
 
 .menu-plat {
+  /* etiquette des plats */
   background-color: white;
   border-radius: 15px;
   width: 90%;
@@ -396,20 +599,42 @@ body {
   padding-top: 12px;
   padding-bottom: 12px;
   position: relative;
+  /* permet d'ajouter des ombres grises */
   box-shadow: 5px 5px 5px #e6e6e6;
   z-index: 1;
   overflow: hidden;
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+  /* fais apparaitre les plats avec un petit delay entre chaque plat */
+}
+.menu-plat:hover {
+  /* animations au survol du plat */
 }
 .menu-plat:hover .add {
   transform: translateX(-60px);
+  /* fait apparaitre la bouton d'ajout vers la gauche */
 }
 .menu-plat:hover .check {
   transform: rotate(0);
+  /* rotation de l'icone "check" */
 }
 .menu-plat:hover .menu-plat__prix {
   transform: translate(-60px);
+  /* translation du prix du plat */
 }
 .menu-plat .add {
+  /* propriétés de la coche qui apparait au survol*/
+  /* permet de positionner un élément */
   position: absolute;
   top: 0px;
   left: auto;
@@ -419,6 +644,7 @@ body {
   height: -webkit-fill-available;
   color: white;
   background-color: #99E2D0;
+  /* permet de centrer un élément */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -429,11 +655,14 @@ body {
   transition: transform 430ms ease-in-out;
 }
 .menu-plat .check {
+  /* propriétés de l'icone "check" */
   transform: rotate(-1turn);
   transition: transform 330ms ease-in-out 100ms;
   font-size: 25px;
 }
 .menu-plat__prix {
+  /* prix du plat */
+  /* permet de positionner un élément */
   position: absolute;
   top: auto;
   left: auto;
@@ -445,11 +674,13 @@ body {
   z-index: 2;
 }
 .menu-plat__nom {
+  /* nom du plat */
   font-size: 1.2em;
   margin: unset;
   padding-right: 60px;
 }
 .menu-plat__description {
+  /* description du plat */
   margin: unset;
   padding-right: 60px;
 }
@@ -506,13 +737,20 @@ body {
   animation-delay: 840ms;
 }
 
+.menu-grid {
+  /* permet de rajoute les 3 petits points quand la description du plat est trop longue à l'apparition de la coche */
+}
+.menu-grid--palette .menu-plat--2 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+}
 @media all and (min-width: 0px) and (max-width: 370px) {
-  .menu-palette .menu-plat--2:hover::after {
+  .menu-grid--palette .menu-plat--2:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--2::after {
+  .menu-grid--palette .menu-plat--2::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -525,14 +763,19 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+.menu-grid--palette .menu-plat--3 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 368px) and (max-width: 430px) {
-  .menu-palette .menu-plat--3:hover::after {
+  .menu-grid--palette .menu-plat--3:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--3::after {
+  .menu-grid--palette .menu-plat--3::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -545,14 +788,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 870px) {
+  .menu-grid--palette .menu-plat--3:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--palette .menu-plat--3::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--palette .menu-plat--5 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 405px) and (max-width: 470px) {
-  .menu-palette .menu-plat--5:hover::after {
+  .menu-grid--palette .menu-plat--5:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--5::after {
+  .menu-grid--palette .menu-plat--5::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -565,14 +834,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 810px) and (max-width: 940px) {
+  .menu-grid--palette .menu-plat--5:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--palette .menu-plat--5::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--palette .menu-plat--6 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 375px) and (max-width: 435px) {
-  .menu-palette .menu-plat--6:hover::after {
+  .menu-grid--palette .menu-plat--6:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--6::after {
+  .menu-grid--palette .menu-plat--6::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -585,14 +880,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 875px) {
+  .menu-grid--palette .menu-plat--6:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--palette .menu-plat--6::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--palette .menu-plat--10 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 0px) and (max-width: 410px) {
-  .menu-palette .menu-plat--10:hover::after {
+  .menu-grid--palette .menu-plat--10:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--10::after {
+  .menu-grid--palette .menu-plat--10::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -605,14 +926,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 820px) {
+  .menu-grid--palette .menu-plat--10:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--palette .menu-plat--10::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--palette .menu-plat--11 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 387px) and (max-width: 450px) {
-  .menu-palette .menu-plat--11:hover::after {
+  .menu-grid--palette .menu-plat--11:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-palette .menu-plat--11::after {
+  .menu-grid--palette .menu-plat--11::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -626,14 +973,14 @@ body {
     background-color: white;
   }
 }
-
-@media all and (min-width: 376px) and (max-width: 435px) {
-  .menu-note .menu-plat--1:hover::after {
+@media all and (min-width: 773px) and (max-width: 905px) {
+  .menu-grid--palette .menu-plat--11:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--1::after {
+  .menu-grid--palette .menu-plat--11::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -646,14 +993,64 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+.menu-grid--note .menu-plat--1 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+}
+@media all and (min-width: 376px) and (max-width: 435px) {
+  .menu-grid--note .menu-plat--1:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--note .menu-plat--1::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+@media all and (min-width: 770px) and (max-width: 880px) {
+  .menu-grid--note .menu-plat--1:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--note .menu-plat--1::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--note .menu-plat--2 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 0px) and (max-width: 360px) {
-  .menu-note .menu-plat--2:hover::after {
+  .menu-grid--note .menu-plat--2:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--2::after {
+  .menu-grid--note .menu-plat--2::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -666,14 +1063,18 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+.menu-grid--note .menu-plat--4 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 0px) and (max-width: 380px) {
-  .menu-note .menu-plat--4:hover::after {
+  .menu-grid--note .menu-plat--4:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--4::after {
+  .menu-grid--note .menu-plat--4::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -686,14 +1087,18 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+.menu-grid--note .menu-plat--6 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 0px) and (max-width: 355px) {
-  .menu-note .menu-plat--6:hover::after {
+  .menu-grid--note .menu-plat--6:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--6::after {
+  .menu-grid--note .menu-plat--6::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -707,13 +1112,18 @@ body {
     background-color: white;
   }
 }
+.menu-grid--note .menu-plat--8 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+}
 @media all and (min-width: 0px) and (max-width: 400px) {
-  .menu-note .menu-plat--8:hover::after {
+  .menu-grid--note .menu-plat--8:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--8::after {
+  .menu-grid--note .menu-plat--8::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -726,14 +1136,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 810px) {
+  .menu-grid--note .menu-plat--8:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--note .menu-plat--8::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--note .menu-plat--10 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 399px) and (max-width: 460px) {
-  .menu-note .menu-plat--10:hover::after {
+  .menu-grid--note .menu-plat--10:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-note .menu-plat--10::after {
+  .menu-grid--note .menu-plat--10::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -747,14 +1183,14 @@ body {
     background-color: white;
   }
 }
-
-@media all and (min-width: 0px) and (max-width: 360px) {
-  .menu-francaise .menu-plat--2:hover::after {
+@media all and (min-width: 798px) and (max-width: 920px) {
+  .menu-grid--note .menu-plat--10:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-francaise .menu-plat--2::after {
+  .menu-grid--note .menu-plat--10::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -767,14 +1203,43 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+.menu-grid--francaise .menu-plat--2 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+}
+@media all and (min-width: 0px) and (max-width: 360px) {
+  .menu-grid--francaise .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--francaise .menu-plat--2::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--francaise .menu-plat--5 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 370px) and (max-width: 430px) {
-  .menu-francaise .menu-plat--5:hover::after {
+  .menu-grid--francaise .menu-plat--5:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-francaise .menu-plat--5::after {
+  .menu-grid--francaise .menu-plat--5::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -787,14 +1252,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 860px) {
+  .menu-grid--francaise .menu-plat--5:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--francaise .menu-plat--5::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--francaise .menu-plat--6 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 0px) and (max-width: 400px) {
-  .menu-francaise .menu-plat--6:hover::after {
+  .menu-grid--francaise .menu-plat--6:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-francaise .menu-plat--6::after {
+  .menu-grid--francaise .menu-plat--6::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -807,14 +1298,40 @@ body {
     z-index: 1;
     background-color: white;
   }
+}
+@media all and (min-width: 770px) and (max-width: 810px) {
+  .menu-grid--francaise .menu-plat--6:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--francaise .menu-plat--6::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--francaise .menu-plat--7 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
 }
 @media all and (min-width: 355px) and (max-width: 415px) {
-  .menu-francaise .menu-plat--7:hover::after {
+  .menu-grid--francaise .menu-plat--7:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-francaise .menu-plat--7::after {
+  .menu-grid--francaise .menu-plat--7::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -828,14 +1345,39 @@ body {
     background-color: white;
   }
 }
-
+@media all and (min-width: 770px) and (max-width: 860px) {
+  .menu-grid--francaise .menu-plat--7:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--francaise .menu-plat--7::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
+}
+.menu-grid--delice .menu-plat--2 {
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+  /* permet d'ajouter les 3 petits points quand la description d'un plat est trop longue */
+}
 @media all and (min-width: 0px) and (max-width: 390px) {
-  .menu-delice .menu-plat--2:hover::after {
+  .menu-grid--delice .menu-plat--2:hover::after {
     transform: translateX(-30px);
     opacity: 1;
   }
-  .menu-delice .menu-plat--2::after {
+  .menu-grid--delice .menu-plat--2::after {
     content: "...";
+    /* permet de positionner un élément */
     position: absolute;
     top: auto;
     left: auto;
@@ -849,16 +1391,35 @@ body {
     background-color: white;
   }
 }
-
-.menu-img {
-  width: 100%;
+@media all and (min-width: 770px) and (max-width: 800px) {
+  .menu-grid--delice .menu-plat--2:hover::after {
+    transform: translateX(-30px);
+    opacity: 1;
+  }
+  .menu-grid--delice .menu-plat--2::after {
+    content: "...";
+    /* permet de positionner un élément */
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: 12px;
+    right: 30px;
+    opacity: 0;
+    width: 70px;
+    padding-left: 2px;
+    transition: all 430ms;
+    z-index: 1;
+    background-color: white;
+  }
 }
 
 .figure__image {
+  /* l'image prend toute la largeur disponible */
   width: 100%;
 }
 
 .footer {
+  /* propriétés du pied de page */
   margin-top: -90px;
   background-color: #333333;
   color: white;
@@ -868,11 +1429,31 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media all and (min-width: 770px) {
+  .footer {
+    /* repositionne le pied de page à cause des changement pour les grands écrans */
+    position: relative;
+  }
+  .footer--francaise {
+    margin-top: -350px;
+  }
+  .footer--note {
+    margin-top: -900px;
+  }
+  .footer--palette {
+    margin-top: -400px;
+  }
+  .footer--delice {
+    margin-top: -400px;
+  }
+}
 .footer__logo {
+  /* nom du site */
   font-family: Shrikhand, Arial, serif;
   margin-top: -10px;
 }
 .footer__link {
+  /* liens du pied de page */
   text-decoration: none;
   color: white;
   display: flex;
@@ -880,10 +1461,12 @@ body {
   margin-bottom: 5px;
 }
 .footer__link p {
+  /* texte des liens */
   margin: unset;
   padding-left: 10px;
 }
 .footer__link i {
+  /* icone des liens */
   width: 20px;
 }
 

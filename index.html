@@ -12,119 +12,122 @@
 </head>
 
 <body>
-  <div class="load">
-    <i class="fas fa-hamburger load__burger"></i>
-    <div class="load__croc load__croc--1"> </div>
-    <div class="load__croc load__croc--2"> </div>
-    <div class="load__croc load__croc--3"> </div>
+  <div class="load"> <!-- loading spinner -->
+    <i class="fas fa-hamburger load__burger"></i> <!-- burger du spinner -->
+    <div class="load__croc load__croc--1"> </div> <!-- croc du spinner -->
+    <div class="load__croc load__croc--2"> </div>  <!-- croc du spinner -->
+    <div class="load__croc load__croc--3"> </div> <!-- croc du spinner -->
   </div>
 
-  <div class="page">
-    <header class="header">
-      <h1 class="header__heading">ohmyfood</h1>
+  <div class="page"> <!-- contient toute la page -->
+    <header class="header"> <!-- haut de page -->
+      <h1 class="header__heading">ohmyfood</h1> <!-- titre du haute de page / nom du site -->
     </header>
 
-    <section class="location">
-      <i class="location__icone fas fa-map-marker-alt"></i>
-      <form method="post" action="action.php">
+    <section class="location"> <!-- section permet la recherche de ville -->
+      <i class="location__icone fas fa-map-marker-alt"></i> <!-- icone marker -->
+      <form method="post" action="action.php"> <!-- la recherche appelle la page action.php qui n'existe pas pour l'instant -->
         <input class="location__input" type="text" name="ville" placeholder="Paris, Belleville">
       </form>
     </section>
 
-    <section class="presentation">
-      <h2 class="presentation__title">Réservez le menu qui vous convient</h2>
-      <p class="presentation__text">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
-      <a class="presentation__btn btn" href="#restaurant">Explorer nos restaurants</a>
-    </section>
+    <div class="pres-fonct"> <!-- cree une div qui permettra d'afficher les sections presentation et fonction cote à cote sur les grands ecrans -->
+      <section class="presentation"> <!-- section de presentation du site -->
+        <h2 class="presentation__title">Réservez le menu qui vous convient</h2>
+        <p class="presentation__text">Découvrez des restaurants d'exception, séléctionnés par nos soins.</p>
+        <a class="presentation__btn btn" href="#restaurant">Explorer nos restaurants</a> <!-- le bouton renvoie à la section restaurant -->
+      </section>
 
-    <section class="fonctionnement">
-      <h2 class="fonctionnement__title">Fonctionnement</h2>
+      <section class="fonctionnement"> <!-- section fonctionnement du sites -->
+        <h2 class="fonctionnement__title">Fonctionnement</h2>
 
-      <div class="etape">
-        <p class="etape__numero">1</p>
-        <i class="etape__icone fas fa-mobile-alt"></i>
-        <p class="etape__text">Choisissez un restaurant</p>
-      </div>
+        <div class="etape">
+          <p class="etape__numero">1</p>
+          <i class="etape__icone fas fa-mobile-alt"></i> <!-- icone de telephone -->
+          <p class="etape__text">Choisissez un restaurant</p>
+        </div>
 
-      <div class="etape">
-        <p class="etape__numero">2</p>
-        <i class="etape__icone fas fa-list-ul"></i>
-        <p class="etape__text">Composez votre menu</p>
-      </div>
+        <div class="etape">
+          <p class="etape__numero">2</p>
+          <i class="etape__icone fas fa-list-ul"></i> <!-- icone de liste -->
+          <p class="etape__text">Composez votre menu</p>
+        </div>
 
-      <div class="etape">
-        <p class="etape__numero">3</p>
-        <i class="etape__icone fas fa-store"></i>
-        <p class="etape__text">Dégustez au restaurant</p>
-      </div>
-    </section>
+        <div class="etape">
+          <p class="etape__numero">3</p>
+          <i class="etape__icone fas fa-store"></i> <!-- icone de magasin -->
+          <p class="etape__text">Dégustez au restaurant</p>
+        </div>
+      </section>
+    </div>
 
-    <section class="restaurant-grid" id="restaurant">
+
+    <section class="restaurant-grid" id="restaurant"> <!-- section contenant les liens des différents restaurants -->
       <h2 class="restaurant-grid__title">Restaurants</h2>
 
-      <a class="restaurant-link" href="lapalettedugout.html">
-        <p class="restaurant-link__nouveau">Nouveau</p>
-        <figure class="figure">
+      <a class="restaurant-link" href="lapalettedugout.html"> <!-- lien menant à la page du restaurant -->
+        <p class="restaurant-link__nouveau">Nouveau</p> <!-- etiquette 'nouveau' du lien -->
+        <figure class="figure"> <!-- figure avec l'image du restaurant, son nom, son lieu et l'icone "coeur" pour l'ajouter en favori -->
           <img class="figure__image" src="img/palettedugout_accueil.jpg" alt="photo d'une assiette de La palette du goût">
           <figcaption class="figure__caption">
             <h3>La palette du goût</h3>
             <p>Ménilmontant</p>
-            <i class="far fa-heart coeur"></i>
+            <i class="far fa-heart coeur"></i> <!-- icone coeur -->
           </figcaption>
         </figure>
       </a>
 
-      <a class="restaurant-link" href="lanoteenchantee.html">
-        <p class="restaurant-link__nouveau">Nouveau</p>
-        <figure class="figure">
+      <a class="restaurant-link" href="lanoteenchantee.html"> <!-- lien menant à la page du restaurant -->
+        <p class="restaurant-link__nouveau">Nouveau</p> <!-- etiquette 'nouveau' du lien -->
+        <figure class="figure"> <!-- figure avec l'image du restaurant, son nom, son lieu et l'icone "coeur" pour l'ajouter en favori -->
           <img class="figure__image" src="img/noteenchantee_accueil.jpg" alt="photo d'une assiette de La note enchantee">
           <figcaption class="figure__caption">
             <h3>La note enchantée</h3>
             <p>Charonne</p>
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart"></i> <!-- icone coeur -->
           </figcaption>
         </figure>
       </a>
 
-      <a class="restaurant-link" href="alafrancaise.html">
-        <figure class="figure">
+      <a class="restaurant-link" href="alafrancaise.html"> <!-- lien menant à la page du restaurant -->
+        <figure class="figure"> <!-- figure avec l'image du restaurant, son nom, son lieu et l'icone "coeur" pour l'ajouter en favori -->
           <img class="figure__image" src="img/alafrancaise_accueil.jpg" alt="photo d'une assiette de A la française">
           <figcaption class="figure__caption">
             <h3>A la française</h3>
             <p>Cité Rouge</p>
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart"></i> <!-- icone coeur -->
           </figcaption>
         </figure>
       </a>
 
-      <a class="restaurant-link" href="ledelicedessens.html">
-        <figure class="figure">
+      <a class="restaurant-link" href="ledelicedessens.html"> <!-- lien menant à la page du restaurant -->
+        <figure class="figure"> <!-- figure avec l'image du restaurant, son nom, son lieu et l'icone "coeur" pour l'ajouter en favori -->
           <img class="figure__image" src="img/delicedessens_accueil.jpg" alt="photo d'une assiette de Le délice des sens">
           <figcaption class="figure__caption">
             <h3>Le délice des sens</h3>
             <p>Folie-Méricourt</p>
-            <i class="far fa-heart"></i>
+            <i class="far fa-heart"></i> <!-- icone coeur -->
           </figcaption>
         </figure>
       </a>
     </section>
 
-    <footer class="footer">
+    <footer class="footer"> <!-- pied de page -->
       <p class="footer__logo">ohmyfood</p>
 
-      <a class="footer__link" href="proposerrestaurant.html">
+      <a class="footer__link" href="proposerrestaurant.html"> <!-- les liens du pied de page menent pour l'instant à des pages inexistantes -->
         <i class="fas fa-utensils"></i>
         <p>Proposer un resaurant</p>
       </a>
 
-      <a class="footer__link" href="devenirpartenaire.html">
+      <a class="footer__link" href="devenirpartenaire.html"> <!-- les liens du pied de page menent pour l'instant à des pages inexistantes -->
         <i class="fas fa-hands-helping"></i>
         <p>Devenir partenaire</p>
       </a>
 
-      <a class="footer__link" href="mentionslegales.html">Mentions légales</a>
+      <a class="footer__link" href="mentionslegales.html">Mentions légales</a> <!-- les liens du pied de page menent pour l'instant à des pages inexistantes -->
 
-      <a class="footer__link" href="mailto:contact@ohmyfood.fr">Contact</a>
+      <a class="footer__link" href="mailto:contact@ohmyfood.fr">Contact</a> <!-- les liens du pied de page menent pour l'instant à des pages inexistantes -->
     </footer>
   </div>
 
