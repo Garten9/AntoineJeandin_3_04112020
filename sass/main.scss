@@ -328,6 +328,8 @@ body { /* propriétés relatives à toutes les pages */
     margin-bottom: 20px;
     border-radius: $border-radius;
     max-width: 390px;
+    position: relative;
+    z-index: 1;
 
     &__numero{ /* numéro des etapes */
       background-color: $clr-1;
@@ -347,6 +349,25 @@ body { /* propriétés relatives à toutes les pages */
 
     &__text{ /* texte des étapes */
       font-weight: 600;
+    }
+
+    &:hover{ /* permet de changer la couleur de fond des etapes au survol */
+      &::after{
+        opacity: 1;
+      }
+      .etape__icone{
+        color:$clr-1;
+      }
+    }
+
+    &::after{  /* permet de changer la couleur de fond des etapes au survol */
+      content: "";
+      border-radius: $border-radius;
+      @include position(absolute,0,0,0,0);
+      background-color: lighten($clr-1,35%);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 250ms ease-in-out;
     }
   }
 }

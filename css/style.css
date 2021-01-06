@@ -313,6 +313,8 @@ body {
   margin-bottom: 20px;
   border-radius: 15px;
   max-width: 390px;
+  position: relative;
+  z-index: 1;
 }
 .fonctionnement .etape__numero {
   /* numéro des etapes */
@@ -338,6 +340,30 @@ body {
 .fonctionnement .etape__text {
   /* texte des étapes */
   font-weight: 600;
+}
+.fonctionnement .etape:hover {
+  /* permet de changer la couleur de fond des etapes au survol */
+}
+.fonctionnement .etape:hover::after {
+  opacity: 1;
+}
+.fonctionnement .etape:hover .etape__icone {
+  color: #9356DC;
+}
+.fonctionnement .etape::after {
+  /* permet de changer la couleur de fond des etapes au survol */
+  content: "";
+  border-radius: 15px;
+  /* permet de positionner un élément */
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #f2eafb;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms ease-in-out;
 }
 
 .restaurant-grid {
