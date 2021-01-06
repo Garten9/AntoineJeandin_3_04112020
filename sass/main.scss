@@ -578,7 +578,7 @@ body { /* propriétés relatives à toutes les pages */
   .add{ /* propriétés de la coche qui apparait au survol*/
     @include position(absolute, 0px, auto, auto, -60px);
     width:60px;
-    height: -webkit-fill-available;
+    height: 100%;
     color:$clr-white;
     background-color: $clr-3;
     @include flexcenter;

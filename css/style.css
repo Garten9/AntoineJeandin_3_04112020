@@ -641,7 +641,7 @@ body {
   bottom: auto;
   right: -60px;
   width: 60px;
-  height: -webkit-fill-available;
+  height: 100%;
   color: white;
   background-color: #99E2D0;
   /* permet de centrer un élément */
